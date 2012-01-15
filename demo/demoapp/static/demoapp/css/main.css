@@ -1,0 +1,31 @@
+
+body {
+	padding-top: 50px;
+}
+
+
+.topbar div > ul a.profile, .nav a.profile {
+	position: relative;
+	padding-left: 40px;
+}
+
+.topbar div > ul img.avatar, .nav img.avatar {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 32px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	background-color: RGBA(255, 255, 255, 0.8);
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 1px 0 RGBA(0, 0, 0, 0.3), 0 -1px 0 RGBA(255, 255, 255, 0.3);
+	-webkit-box-shadow: 0 1px 0 RGBA(0, 0, 0, 0.3), 0 -1px 0 RGBA(255, 255, 255, 0.3);
+	-o-box-shadow: 0 1px 0 RGBA(0, 0, 0, 0.3), 0 -1px 0 RGBA(255, 255, 255, 0.3);
+	box-shadow: 0 1px 0 RGBA(0, 0, 0, 0.3), 0 -1px 0 RGBA(255, 255, 255, 0.3);
+}
+

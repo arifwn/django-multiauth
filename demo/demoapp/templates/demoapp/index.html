@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+{% load url from future %}
+<html>
+  <head>
+    <link href="{{ STATIC_URL }}demoapp/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}demoapp/css/main.css" rel="stylesheet">
+    
+    <script src="{{ STATIC_URL }}demoapp/js/jquery-1.7.1.min.js"></script>
+    <script src="{{ STATIC_URL }}demoapp/js/bootstrap-dropdown.js"></script>
+    <script src="{{ STATIC_URL }}demoapp/js/bootstrap-scrollspy.js"></script> 
+    <title>Multiauth Demo</title>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <a class="brand" href="{% url 'index' %}">Django Multiauth</a>
+          <ul class="nav">
+            <li><a href="/admin" target="_new">Administration</a></li> 
+          </ul>
+          <ul class="nav secondary-nav"> 
+            <li class="dropdown" data-dropdown="dropdown" > 
+              <a href="#" class="dropdown-toggle profile"><img class="avatar" src="{{ STATIC_URL }}demoapp/images/profile/anon.png" width="32" height="32" /></a> 
+              <ul class="dropdown-menu"> 
+                <li><a href="{{ url_view_profile }}">Profile</a></li>
+                <li><a href="{{ url_change_password }}">Change Password</a></li> 
+                <li class="divider"></li> 
+                <li><a href="{{ url_logout }}">Log Out</a></li> 
+              </ul> 
+            </li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container content-area">
+      <table class="condensed-table zebra-striped">
+        <tbody>
+          <tr>
+            <th>is_authenticated</th>
+            <td>{{ user.is_authenticated }}</td>
+          </tr>
+          <tr>
+            <th>username</th>
+            <td>{{ user.username }}</td>
+          </tr>
+          <tr>
+            <th>first_name</th>
+            <td>{{ user.first_name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
