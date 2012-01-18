@@ -69,12 +69,3 @@ def create_user_profile(sender, instance, created, **kwargs):
         Profile.objects.create(user=instance)
 
 post_save.connect(create_user_profile, sender=User)
-
-def create_profile_if_not_exist():
-    for user in User.objects.all():
-        try:
-            user.multiauth_profile
-        except:
-            Profile.objects.create(user=user)
-            print 'profile created for user', user.username
-    
