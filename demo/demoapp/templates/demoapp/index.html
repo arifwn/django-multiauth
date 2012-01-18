@@ -34,22 +34,53 @@
     </div>
     
     <div class="container content-area">
-      <table class="condensed-table zebra-striped">
-        <tbody>
-          <tr>
-            <th>is_authenticated</th>
-            <td>{{ user.is_authenticated }}</td>
-          </tr>
-          <tr>
-            <th>username</th>
-            <td>{{ user.username }}</td>
-          </tr>
-          <tr>
-            <th>first_name</th>
-            <td>{{ user.first_name }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <section>
+        <div class="page-header">
+          <h2>Standard Info</h2>
+        </div>
+        <table class="condensed-table zebra-striped">
+          <tbody>
+            <tr>
+              <th>is_authenticated</th>
+              <td>{{ user.is_authenticated }}</td>
+            </tr>
+            <tr>
+              <th>username</th>
+              <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+              <th>first_name</th>
+              <td>{{ user.first_name }}</td>
+            </tr>
+            <tr>
+              <th>last_name</th>
+              <td>{{ user.last_name }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <section>
+        <div class="page-header">
+          <h2>Multiauth Info</h2>
+        </div>
+        <table class="condensed-table zebra-striped">
+          <tbody>
+            <tr>
+              <th>multifactor_auth_enabled</th>
+              <td>{{ user.multiauth_profile.multifactor_auth_enabled }}</td>
+            </tr>
+            <tr>
+              <th>authenticator_key</th>
+              <td>{{ user.multiauth_profile.authenticator_key }}</td>
+            </tr>
+            <tr>
+              <th>avatar</th>
+              <td>{{ user.multiauth_profile.avatar }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </div>
   </body>
 </html>
